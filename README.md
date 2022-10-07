@@ -3,6 +3,8 @@
 
 Based on Django , **secure** and **shareable**.  Create daily activities , schedule activities and add notes to do revision in future.
 
+**I have created this project long before for my personal use and I am using it till now.**
+
 1.  Add your notes to keep them for future use and you can revise them.
 
 2.  Add activities , Schedule activities
