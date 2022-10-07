@@ -1,3 +1,4 @@
+> **Note**: Upgrading project from DJANGO 3 to DJANGO 4
 # TODO
 
 Based on Django , **secure** and **shareable**.  Create daily activities , schedule activities and add notes to do revision in future.
@@ -6,7 +7,7 @@ Based on Django , **secure** and **shareable**.  Create daily activities , sched
 
 2.  Add activities , Schedule activities
 
-# Running the Project Locally
+## Running Project locally
 
 ### Create pipenv and install all dependencies.
 
