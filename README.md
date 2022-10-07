@@ -48,3 +48,5 @@ $ pipenv shell
 ![Image](img/screen_shot1.png)
 ![Image](img/screen_shot2.png)
 
+### Freez
+pipenv lock -r > requirements.txt
