@@ -1,15 +1,14 @@
-## Daily-To-Do-Task-Managment
+# TODO
 
+Based on Django , **secure** and **shareable**.  Create daily activities , schedule activities and add notes to do revision in future.
 
-Based on Djanago , secure and shareable.  Add daily activities , schedule your activity and add notes to do revision.
+1.  Add your notes to keep them for future use and you can revise them.
 
-1. Add your notes to keep them fopr future use and you can revise them.
-
-2. Add activities , Schedule activities
+2.  Add activities , Schedule activities
 
 # Running the Project Locally
 
-Create pipenv and install all dependencies.
+### Create pipenv and install all dependencies.
 
 ```bash
 pip install pipenv
@@ -19,26 +18,30 @@ $ pipenv install
 $ pipenv shell
 ```
 
-First, clone the repository to your local machine:
+### Clone repository to your local machine
 
-``` git clone https://github.com/mailtodanish/Daily-To-Do-Task-Managment.git ```
+*   [ ] `git clonehttps://github.com/mailtodanish/TODO.git`
 
-Install the requirements:
+<!---->
 
-Apply the migrations:
+*   [ ] `Install requirements.txt`
 
-dont forget to load applictaion data.
+<!---->
 
-``` 
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py loaddata ApplictaionData.json 
-```
+*   [ ] `Apply migrations`
 
-Update your Secrate Key in seting.py
-Finally, run the development server:
-python manage.py runserver
+### Don't forget to load applictaion data
+
+    python manage.py migrate
+    python manage.py createsuperuser
+    python manage.py loaddata ApplictaionData.json 
+
+**Update your secrets Key in seting.py**
+
+**python manage.py runserver**
 
 ### Screen Shot
+
 ![Image](img/screen_shot1.png)
 ![Image](img/screen_shot2.png)
+
