@@ -1,4 +1,4 @@
-> **Note**: Upgrading project from DJANGO 3 to DJANGO 4
+> **Note**: Upgrading project to DJANGO 4 manually.
 # TODO
 
 Based on Django , **secure** and **shareable**.  Create daily activities , schedule activities and add notes to do revision in future.
