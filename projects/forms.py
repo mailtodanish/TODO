@@ -27,7 +27,7 @@ class LovCreateForm(forms.ModelForm):
                                   queryset=ApplictaionData.objects.filter(
                                       IsCategory=True), label_suffix="",
                                   widget=forms.Select(
-                                          attrs={'class': 'form-control'}))
+                                      attrs={'class': 'form-control'}))
 
     class Meta:
         model = ApplictaionData
@@ -74,6 +74,13 @@ class ProjectTaskCreateForm(forms.ModelForm):
                                      attrs={'class': 'form-control'}))
     Task_Description = forms.CharField(widget=forms.Textarea(attrs={"rows": 5,
                                        "cols": 20, 'class': 'form-control'}))
+
+    is_active = forms.BooleanField(label='Active', label_suffix="",
+                                   widget=forms.CheckboxInput(),
+                                   required=False)
+    fav_flag = forms.BooleanField(label='Favourite', label_suffix="",
+                                   widget=forms.CheckboxInput(),
+                                   required=False)
 
     class Meta:
         model = ProjectTask
@@ -135,45 +142,45 @@ class ActivityCreateForm(forms.ModelForm):
     '''
     required_css_class = 'required'
     Description = forms.CharField(
-                            label='detail',
-                            required=True,
-                            label_suffix="",
-                            # widget=TinyMCE(attrs={'class': 'form-control'})
-                            widget=forms.Textarea()
-                            )
+        label='detail',
+        required=True,
+        label_suffix="",
+        # widget=TinyMCE(attrs={'class': 'form-control'})
+        widget=forms.Textarea()
+    )
     Title = forms.CharField(
-                            label='Title',
-                            required=True,
-                            label_suffix="",
-                            widget=forms.TextInput(
-                                attrs={'class': 'form-control'})
-                            )
+        label='Title',
+        required=True,
+        label_suffix="",
+        widget=forms.TextInput(
+            attrs={'class': 'form-control'})
+    )
     status = forms.ModelChoiceField(
-                                    to_field_name="Name",
-                                    label_suffix="",
-                                    required=True,
-                                    empty_label='---------',
-                                    queryset=ApplictaionData.objects.filter(
-                                     Type__Name__contains='Activity_Status'),
-                                    widget=forms.Select(
-                                        attrs={'class': 'form-control'})
-                                    )
+        to_field_name="Name",
+        label_suffix="",
+        required=True,
+        empty_label='---------',
+        queryset=ApplictaionData.objects.filter(
+            Type__Name__contains='Activity_Status'),
+        widget=forms.Select(
+            attrs={'class': 'form-control'})
+    )
     Type = forms.ModelChoiceField(
-                                    to_field_name="Name",
-                                    label_suffix="",
-                                    empty_label='---------',
-                                    required=True,
-                                    queryset=ApplictaionData.objects.filter(
-                                        Type__Name__contains='Activity_Type'),
-                                    widget=forms.Select(
-                                        attrs={'class': 'form-control'})
-                                )
+        to_field_name="Name",
+        label_suffix="",
+        empty_label='---------',
+        required=True,
+        queryset=ApplictaionData.objects.filter(
+            Type__Name__contains='Activity_Type'),
+        widget=forms.Select(
+            attrs={'class': 'form-control'})
+    )
     scheduled = forms.DateField(
-                                label_suffix="",
-                                initial=timezone.now(),
-                                required=True,
-                                widget=forms.SelectDateWidget()
-                            )
+        label_suffix="",
+        initial=timezone.now(),
+        required=True,
+        widget=forms.SelectDateWidget()
+    )
 
     class Meta:
         model = Activity

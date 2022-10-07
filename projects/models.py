@@ -79,8 +79,8 @@ class ProjectTask(TimeAuditModel):
                                         verbose_name="description",
                                         help_text="task description")
     Task_Title = models.TextField(null=False, unique=True)
-    fav_flag = models.BooleanField(default=False, null=True)
-
+    fav_flag = models.BooleanField(default=False, null=True, verbose_name="favourite",)
+    is_active = models.BooleanField(default=True, null=True, verbose_name="Active",)
     signer = Signer(salt='projectTask.Task')
     slug = models.SlugField(max_length=200, unique=True, null=True)
 
@@ -139,7 +139,7 @@ class TaskComment(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-       ordering = ['-fav_flag', '-pk']
+        ordering = ['-fav_flag', '-pk']
 
 
 class FavLink(models.Model):
@@ -214,7 +214,6 @@ class Activity(models.Model):
                 scheduledActivity.scheduled = self.day_hence(365)
             scheduledActivity.Description = self.Description
             scheduledActivity.save()
-
 
 
 class Favoutite_item(models.Model):

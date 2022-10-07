@@ -11,7 +11,7 @@ from taggit_serializer.serializers import (TagListSerializerField,
 
 
 class FavouriteItemSerializer(serializers.ModelSerializer):
-    
+
     class Meta:
         model = Favoutite_item
         fields = '__all__'
