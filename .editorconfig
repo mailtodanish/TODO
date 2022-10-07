@@ -1,0 +1,20 @@
+# https://editorconfig.org/
+
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+trim_trailing_whitespace = true
+charset = utf-8
+
+[*.{js,py}]
+max_line_length = 119
+insert_final_newline = true
+quote_type = single
+
+[*.rst]
+max_line_length = 80
+
+[*.yml]
+indent_size = 2
