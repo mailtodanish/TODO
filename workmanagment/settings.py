@@ -23,6 +23,7 @@ _DJANGO_APPS = [
     'taggit_serializer',
     'django.contrib.humanize',
     'crispy_forms',
+    'django_extensions'
 ]
 _LOCAL_APPS = [
     'projects.apps.ProjectsConfig',

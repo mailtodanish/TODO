@@ -206,7 +206,7 @@ class CommentsofTheDay(APIView):
 
     def get(self, request, format=None):
         try:
-            queryset = TaskComment.objects.all().order_by('updated')[:20]
+            queryset = TaskComment.objects.exclude(task__is_active=False).all().order_by('updated')[:20]
             queryset1 = TaskComment.objects.all().order_by('-created')[:3]
             object_list = []
             for record in queryset:

@@ -18,6 +18,7 @@ dj-taggit-serializer==0.1.7
 django-appconf==1.0.5; python_version >= '3.6'
 django-crispy-forms==1.14.0
 django-cryptography==1.1
+django-extensions==3.2.1
 django-taggit-serializer==0.1.7
 django-taggit==3.0.0; python_version >= '3.6'
 django-tinymce==3.5.0

@@ -201,7 +201,7 @@ class TaskList(LoginRequiredMixin, ListView):
     context_object_name = 'records'
 
     def get_queryset(self):
-        
+
         queryset = ProjectTask.objects.annotate(
             num_authors=Count('task_comment')).order_by("-fav_flag")
         return queryset
@@ -328,7 +328,7 @@ def generate_pdf(request, slug):
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = ProjectTask
-    fields = ['Task_Description']
+    fields = [ 'is_active', 'fav_flag']
     template_name_suffix = '_update_form'
 
     def get_success_url(self, **kwargs):
@@ -348,7 +348,7 @@ class AddTaskComment(LoginRequiredMixin, CreateView):
         kwargs = super().get_form_kwargs()
         kwargs['taskid'] = self.kwargs.get("pk")
         return kwargs
-    
+
     def get_initial(self):
         # You could even get the Book model using Book.objects.get here!
         return {

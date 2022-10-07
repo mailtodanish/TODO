@@ -50,3 +50,5 @@ $ pipenv shell
 
 ### Freez
 pipenv lock -r > requirements.txt
+
+python manage.py shell_plus --notebook
