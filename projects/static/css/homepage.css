@@ -1,0 +1,110 @@
+.blink_me {
+    animation: blinker 1s linear infinite;
+  }
+
+  @keyframes blinker {
+      0% {
+        left: 0;
+        transform: translateX(0);
+      }
+      100% {
+        left: 5%;
+        transform: translateX(-5%);
+      }
+  }
+  .info-box {
+      border-bottom-left-radius: 5px;
+      border-top-right-radius: 5px;
+      min-height: 100px;
+      width: 100%;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+      -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+      margin-bottom: 20px;
+      padding: 15px;
+  }
+  .bg-b-orange {
+      background: linear-gradient(45deg, #da2e3e, #ff9304);
+  }
+  .bg-b-green {
+      background: linear-gradient(45deg,#6640ff,#ff7a0c);
+  }
+  .info-box-text, .progress-description {
+      display: block;
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 400;
+  }
+  .state-overview {
+      color: #fff;
+  }
+  .info-box .progress {
+      background: rgba(0, 0, 0, .2);
+      margin: 5px -10px 5px 0;
+      height: 2px;
+  }
+  .info-box .progress .progress-bar {
+      background: #fff;
+  }
+  .info-box-icon.push-bottom {
+      margin-top: 20px;
+  }
+  .info-box-icon {
+      float: left;
+      height: 70px;
+      width: 70px;
+      text-align: center;
+      font-size: 30px;
+      line-height: 54px;
+      background: rgba(0, 0, 0, .2);
+      border-radius: 100%;
+  }
+  .material-icons {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: 'liga';
+  }
+  .info-box-content {
+      padding: 10px 10px 10px 0;
+      margin-left: 90px;
+  }
+  .card-head header {
+      display: inline-block;
+      padding: 11px 20px;
+      vertical-align: middle;
+      line-height: 17px;
+      font-size: 20px;
+  }
+  .shadow-custom{
+
+    border: 1px solid;
+    padding: 1px;
+    box-shadow: 1px 1px #888888;
+
+  }
+
+  div#Priority_Task {
+    font-size: 1.3rem;
+    padding: 2px;
+    color: #615e5c;
+}
+.ptask{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+}

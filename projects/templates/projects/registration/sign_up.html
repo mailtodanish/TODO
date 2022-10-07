@@ -1,0 +1,47 @@
+  {% extends 'projects/registration/base.html' %}
+  {% block content %}
+  <form  method="post" >
+        {% csrf_token %}
+      <div class="form-group">
+              {{ create_user.username.label_tag }}
+              {{ create_user.username }}
+              <span class="helptext">{{ create_user.username.help_text }}</span>
+              {{ create_user.username.errors }}
+              </div>
+              <div class="form-group">
+              {{ create_user.first_name.label_tag }}
+              {{ create_user.first_name| safe}}
+              <span class="helptext">{{ create_user.first_name.help_text }}</span>
+              {{ create_user.first_name.errors }}
+              </div>
+
+              <div class="form-group">
+              {{ create_user.last_name.label_tag }}
+              {{ create_user.last_name }}
+              <span class="helptext">{{ create_user.last_name.help_text }}</span>
+              {{ create_user.last_name.errors }}
+              </div>
+              <div class="form-group">
+              {{ create_user.email.label_tag }}
+              {{ create_user.email }}
+              <span class="helptext">{{ create_user.email.help_text }}</span>
+              {{ create_user.email.errors }}
+              </div>
+              <div class="form-group">
+              {{ create_user.password1.label_tag }}
+              {{ create_user.password1 }}
+              <span class="helptext">{{ create_user.password1.help_text }}</span>
+              {{ create_user.password1.errors }}
+              </div>
+              <div class="form-group">
+              {{ create_user.password2.label_tag }}
+              {{ create_user.password2 }}
+              <span class="helptext">{{ create_user.password2.help_text }}</span>
+              {{ create_user.password2.errors }}
+        </div>
+        <div class="modal-footer">
+        <a href="/" class="btn btn-secondary" >Close</a>
+         <input type="submit" class="btn btn-warning" name ="activity_form" value="Save" >
+      </div>
+      </form>
+ {% endblock  %}

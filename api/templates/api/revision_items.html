@@ -1,0 +1,11 @@
+<html>
+    <head>
+    </head>
+    <body>
+    {% for item in items %}
+        <h4>{{ item.content|safe }}</h4>
+        <a href="{{ domain }}/comments/update/{{item.pk}}/">Edit</a>
+        <hr>
+    {% endfor %}
+    </body>
+</html>

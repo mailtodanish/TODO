@@ -1,0 +1,18 @@
+{% extends 'projects/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Update Profile
+{% endblock %}
+
+{% block content %}
+<form method="post" novalidate>
+    {% load crispy_forms_tags %}
+    {% csrf_token %}
+    {{ form.as_p }}    
+    <input type="submit" id = "update_profile" value="Update">
+</form>
+</div>
+
+{% endblock %}

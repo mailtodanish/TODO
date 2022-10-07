@@ -1,0 +1,296 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>
+    {% block title %}
+    {% endblock %}
+    </title>
+
+
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static '/bootsrap/css/bootstrap.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static '/watch/css/main.css' %}" rel="stylesheet" type="text/css">
+<!--font-->
+<link href="https://fonts.googleapis.com/css2?family=Galada&family=Grenze+Gotisch:wght@200;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@200;500&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{% block CSSLink %}
+
+{% endblock %}
+    <style>
+          /* Issue to fix tooltip in modal */
+          .tooltip {
+            z-index: 1151 !important;
+
+          }
+          /*color of link */
+          a {
+    color: #000000;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+    label.required::after {
+    content: ' *';
+    color: red;
+    }
+
+    .errorlist{
+      color:red;
+    }
+      .bd-placeholder-img
+       {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      #right-panel {
+        position: fixed;
+
+    right: 0;
+    width: 0%;
+    /* transform: translateX(350px); */
+    height: 100%;
+    background-color: #f5f5f5;
+    border-left: 1px solid #353535;
+    transition: 0.5s;
+    }
+    .dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a:hover {
+  background: linear-gradient(45deg, #ffc001, #020202);
+}
+
+    {% block CSS %}
+    {% endblock %}
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/timeline.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/tagsinput.css' %}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho&display=swap" rel="stylesheet">
+
+  </head>
+  <body  style="overflow: auto;background: #fdfbfb;font-family: 'Shippori Mincho', serif;font-size: 12px !important;">
+    <nav class="navbar navbar-dark sticky-top  flex-md-nowrap p-0 shadow" style="background: linear-gradient(45deg, #ffc001, #020202);">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/" style="font-family: 'Galada', cursive;">
+    <h4>Work Managment</h4>
+  </a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <input class="form-control form-control-light w-100 " type="text" placeholder="Search" aria-label="Search" id="Search">
+
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <!-- <a class="nav-link text-white" href="{% url 'logout' %}">Sign out</a> -->
+      <div class="dropdown">
+        <a class="dropbtn">
+          <i class="fa fa-user-circle-o fa-2x" style="color:#ffeac5"></i>
+        </a>
+      <div class="dropdown-content dropdown-menu-right">
+        <!-- <a href="#">Link 1</a> -->
+        <a href="{% url 'edit_profile' %}">Profile</a>
+        <a href="{% url 'logout' %}">Sign out</a>
+      </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url 'HomePage' %}">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href='{% url "task-view" %}'>
+              <span data-feather="file"></span>
+             My Notes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "activity-view" %}">
+              <span data-feather="activity"></span>
+              Activities
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "task-comments-view" %}">
+              <span data-feather="layers"></span>
+              Revison
+            </a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link"   data-toggle="modal" data-target="#SettingModal">
+              <span data-feather="settings"></span>
+              Settings
+            </a>
+
+          </li>
+
+        </ul>
+        <div id=watch>
+          <!-- <div id=time></div> -->
+         <div id="second"></div>
+         <div id="minute"></div>
+         <div id="hour"></div>
+        </div>
+
+
+      </div>
+
+    </nav>
+
+    <main role="main" id ="printable" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+      {% block content %}
+      {% endblock %}
+
+    </main>
+    <div id="right-panel">
+      <div style="font-size: 30px;">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </div>
+    <div id = right-panel-data>
+
+    </div>
+  </div>
+
+
+  </div>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="SettingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Settings</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <a class="nav-link" href="{% url 'lov-view' %}">
+              <span data-feather="external-link"></span>
+              List Of values
+      </a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--end modal-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!--reuire for tooltip--><script src="{% static 'bootsrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'bootsrap/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'js/feather.min.js' %}"></script>
+<script src="{% static 'js/Chart.min.js' %}"></script>
+<script src="{% static 'js/dashboard.js' %}"></script>
+<script src="{% static 'js/tagsinput.js' %}"></script>
+<script src="{% static 'js/api.js' %}"></script> <!--API Call-->
+<script src="{% static 'watch/js/index.js' %}"></script>
+<script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+
+{% block jslink %}
+{% endblock %}
+
+<script>
+{% block js %}
+{% endblock %}
+$(document).on('keypress',function(e) {
+if(e.which == 13)
+{
+  if (e.target.id=="Search")
+  {
+    let v = $("#Search").val();
+    if(v!="")
+    {
+      let key = v.trim().toLowerCase().replace(/ /g,"");
+      let l = `/comments/${key}/`;
+      let link = document.createElement('a');
+      link.href = l;
+      document.body.appendChild(link);
+      link.click();
+    }
+  }
+}
+});
+$(document).ready(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+    });
+// Active URL  - Implmentation - start
+let pathname = window.location.pathname,
+pages = ['/Dashboard/', '/task/', '/activity/','/comments/'];
+let nav = $('.nav-link');
+
+nav.each(function(i,item) {
+
+ if (pathname.includes(pages[i]))
+ {
+   $(item).addClass('active');
+   console.log($(item).html());
+ }
+ else {
+   $(item).removeClass('active');
+ }
+});
+// Active URL  - Implmentation - End
+/* Set the width of the sidebar to 250px (show it) */
+function openNav() {
+  document.getElementById("right-panel").style.width = "30%";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("right-panel").style.width = "0";
+}
+</script>
+
+
+</body>
+</html>

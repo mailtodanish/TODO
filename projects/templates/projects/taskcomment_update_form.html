@@ -1,0 +1,36 @@
+
+{% extends 'projects/base.html' %}
+{% block title %}
+Update Comment
+{% endblock %}
+{% block content %}
+{% load utils %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">{{ projecttask }}</h1>
+
+</div>
+{{ form.media }}
+<form method="post">{% csrf_token %}
+    {% csrf_token %}  
+    <div class="form-group">
+        <label>Tags</label>
+        {{ form.tags|add_attr:"data-role:tagsinput" }}
+        {{ form.tags.errors }}
+        </div>      
+        <div class="form-group">
+        {{ form.content.label_tag }}
+        {{ form.content }}
+        {{ form.content.errors }}
+        </div>
+         <div class="form-group">
+        {{ form.task.label_tag }}
+        {{ form.task }}
+        {{ form.task.errors }}
+        </div>
+        
+    <input type="submit" class="btn btn-success" value="Update">
+    <a class="btn btn-danger " href="{% url 'task-comment-delete' form.instance.id %}">Delete</a>
+</form>
+</div>
+
+{% endblock %}

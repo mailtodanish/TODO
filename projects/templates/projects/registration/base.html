@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    {% load static %}
+    <link  href="{% static 'main.css' %}" />
+   <style>
+        span.helptext {
+        display: block;
+        font-size: 11px;
+        color: black;
+        }
+        ul.errorlist {
+    color: red;
+}
+   </style>
+   
+</head>
+<body >  
+
+<!--Login Start-->
+<div id="display_login" class="card" style="width: 21.5em;margin:10px auto;">
+   {% comment %} <i class="fas fa-lock" style="font-size: 50px; margin-bottom: 5%; margin-left:40%;color:#ffc107"></i> {% endcomment %}
+	<div class="card-body">
+		      
+       {% block content %}
+       {% endblock %}
+        <div class="text-danger">
+		{% for message in messages %}
+		{{message}}
+		{% endfor %}
+		</div>
+    </div>
+      
+        
+		
+	</div>
+</div>
+
+<!--end login-->
+  
+         
+        
+<script src="{% static "js/jquery.min.js" %}"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!--reuire for tooltip--><script src="{% static "bootsrap/js/bootstrap.min.js" %}"></script>
+
+
+</body>
+</html>

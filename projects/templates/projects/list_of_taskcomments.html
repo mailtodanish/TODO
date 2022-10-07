@@ -1,0 +1,70 @@
+{% extends 'projects/base.html' %}
+{% load static %}
+
+{% block jslink %}
+<script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+{% endblock %}.
+
+{% block CSSLink %}
+<link href="{% static 'css/jquery.dataTables.min.css'  %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block title %}
+Notes
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2" style="color: gray">All Notes</h1>
+</div>
+<div class="table-responsive">
+  <table class="table table-striped table-bordered" id="all_activities">
+    <thead class="thead-dark">
+      <tr class="text-center">
+        <th scope="col">#</th>
+        <th scope="col">Description</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in records.all %}
+      <tr>
+        <td><a href="{% url 'comment_update'  item.pk %}">{{item.pk}}</a></td>
+        <td>
+          <h4>{{item.content|safe}}</h4>
+          <p>
+            {% for tag in item.tags.all %}
+            {% if tag.name|length > 4 %}
+            <a href="{% url 'tagged'  tag.name %}" class="badge badge-info">{{ tag.name}}</a>
+            {% endif %}
+            {% endfor %}
+
+          </p>
+        </td>
+        <td>
+          <a class="nav-link" href="{% url 'comment_update' item.pk %}" target="_blank">
+            <span data-feather="edit">
+            </span>
+          </a>
+
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% include "projects/icons/pagination.html" %}
+{% endblock %}
+
+{% block js %}
+$(document).ready(function () {
+//Data Table Configuration
+$('#all_activities').DataTable({
+order: [],
+responsive: true,
+lengthChange: false,
+"paging": false,
+"ordering": true,
+});
+});
+{% endblock %}
