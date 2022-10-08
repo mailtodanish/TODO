@@ -15,3 +15,7 @@ def add_attr(field, css):
             attrs[key] = val
 
     return field.as_widget(attrs=attrs)
+
+@register.filter(name='calculate_seq_number')
+def calculate_seq_number(counter, page_number):
+    return (page_number -1) * 20 + counter + 1
