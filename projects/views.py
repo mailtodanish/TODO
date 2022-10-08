@@ -201,7 +201,6 @@ class TaskList(LoginRequiredMixin, ListView):
     context_object_name = 'records'
 
     def get_queryset(self):
-
         queryset = ProjectTask.objects.annotate(
             num_authors=Count('task_comment')).order_by("-fav_flag")
         return queryset
@@ -214,6 +213,8 @@ class AddTask(LoginRequiredMixin, CreateView):
     template_name = 'projects/add_task.html'
     model = ProjectTask
     form_class = ProjectTaskCreateForm
+    def get_success_url(self):
+        return reverse_lazy('task-detail',args=(self.object.slug,))
 
 
 class DeleteTask(LoginRequiredMixin, DeleteView):

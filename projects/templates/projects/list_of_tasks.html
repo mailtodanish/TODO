@@ -8,6 +8,7 @@
 {% endblock %} 
 {% block title %} Tasks {% endblock %} 
 {% block content %}
+{% load utils %}
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2" style="color: gray">Notes</h1>
 
@@ -31,7 +32,8 @@
         <tbody>
             {% for item in records.all %}
             <tr>
-                <td>{{forloop.counter}}</td>
+                <td><strong>{{ forloop.counter0|calculate_seq_number:page_obj.number }}</strong></td>
+                
                 <td><a href="{% url 'task-detail'  item.slug %}">{{item.Task_Title}}- {{item.num_authors}}</a></td>
                 {% if  item.is_active  %}
                 <td></td>
