@@ -1,12 +1,10 @@
 '''
 Activity API View
-TODO: C0114: Missing module docstring (missing-module-docstring)
+FIXME: C0114: Missing module docstring (missing-module-docstring)
 '''
 from rest_framework import generics
 from projects.models import Activity
 from .serializers import ActivitySerializer
-
-# Using DRF generic views to simplify code
 
 
 class ActivityListGeneric(generics.ListCreateAPIView):
