@@ -36,6 +36,6 @@ jobs:
 
     - name: Pylint
       continue-on-error: true
-      run: pylint --load-plugins "pylint_django" --ignore=static --ignore=templates --ignore=migrations */
+      run: pylint --load-plugins=pylint_django --ignore=static --ignore=templates --ignore=migrations */
 
     
