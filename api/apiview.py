@@ -19,18 +19,18 @@ class ActivityViewSet(viewsets.ModelViewSet):
 
 
 class TaskCommentViewSet(viewsets.ModelViewSet):
-        '''
-        TaskCommentRouter
-        '''
-        queryset = TaskComment.objects.all()
-        serializer_class = TaskCommentSerializer
-        permission_classes = (permissions.IsAuthenticated,)
+    '''
+    TaskCommentRouter
+    '''
+    queryset = TaskComment.objects.all()
+    serializer_class = TaskCommentSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
 
 class TaskViewSet(viewsets.ModelViewSet):
-        '''
-        TaskRouter
-        '''  
-        queryset = ProjectTask.objects.all()
-        serializer_class = TaskSerializer
-        permission_classes = (permissions.IsAuthenticated,)
+    '''
+    TaskRouter
+    '''
+    queryset = ProjectTask.objects.all()
+    serializer_class = TaskSerializer
+    permission_classes = (permissions.IsAuthenticated,)
