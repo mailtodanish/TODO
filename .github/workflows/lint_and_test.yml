@@ -37,7 +37,7 @@ jobs:
     - name: Pylint
       env:
             SECRET_KEY: 69tgugtg%^fgJO&*&
-            DJANGO_SETTINGS_MODULE : workmanagment.settings
+            DJANGO_SETTINGS_MODULE : todo.workmanagment.settings
       continue-on-error: true
       run: pylint --load-plugins=pylint_django --django-settings-module="workmanagment.settings" --ignore=static --ignore=templates --ignore=migrations */
 
