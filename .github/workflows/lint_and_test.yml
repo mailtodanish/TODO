@@ -25,6 +25,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install pylint_django
 
     - name: Python & pip versions
       run: |
@@ -35,6 +36,6 @@ jobs:
 
     - name: Pylint
       continue-on-error: true
-      run: pylint --ignore=static --ignore=templates --ignore=migrations */
+      run: pylint --load-plugins "pylint_django" --ignore=static --ignore=templates --ignore=migrations */
 
     
