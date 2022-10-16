@@ -79,8 +79,8 @@ class ProjectTaskCreateForm(forms.ModelForm):
                                    widget=forms.CheckboxInput(),
                                    required=False)
     fav_flag = forms.BooleanField(label='Favourite', label_suffix="",
-                                   widget=forms.CheckboxInput(),
-                                   required=False)
+                                  widget=forms.CheckboxInput(),
+                                  required=False)
 
     class Meta:
         model = ProjectTask

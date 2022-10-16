@@ -213,8 +213,9 @@ class AddTask(LoginRequiredMixin, CreateView):
     template_name = 'projects/add_task.html'
     model = ProjectTask
     form_class = ProjectTaskCreateForm
+
     def get_success_url(self):
-        return reverse_lazy('task-detail',args=(self.object.slug,))
+        return reverse_lazy('task-detail', args=(self.object.slug,))
 
 
 class DeleteTask(LoginRequiredMixin, DeleteView):
@@ -329,7 +330,7 @@ def generate_pdf(request, slug):
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = ProjectTask
-    fields = [ 'is_active', 'fav_flag']
+    fields = ['is_active', 'fav_flag']
     template_name_suffix = '_update_form'
 
     def get_success_url(self, **kwargs):

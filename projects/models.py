@@ -79,8 +79,10 @@ class ProjectTask(TimeAuditModel):
                                         verbose_name="description",
                                         help_text="task description")
     Task_Title = models.TextField(null=False, unique=True)
-    fav_flag = models.BooleanField(default=False, null=True, verbose_name="favourite",)
-    is_active = models.BooleanField(default=True, null=True, verbose_name="Active",)
+    fav_flag = models.BooleanField(
+        default=False, null=True, verbose_name="favourite",)
+    is_active = models.BooleanField(
+        default=True, null=True, verbose_name="Active",)
     signer = Signer(salt='projectTask.Task')
     slug = models.SlugField(max_length=200, unique=True, null=True)
 

@@ -8,4 +8,3 @@ def task_updated(sender, **kwargs):
     task = _obj.task
     task.updated_at = timezone.now()
     task.save()
-

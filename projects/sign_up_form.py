@@ -25,32 +25,32 @@ class EditProfileForm(UserChangeForm):
     username = forms.CharField(
         max_length=30, required=True,
         widget=forms.TextInput(
-                                attrs={'class': 'form-control',
-                                       'readonly': 'readonly'})
-                              )
+            attrs={'class': 'form-control',
+                   'readonly': 'readonly'})
+    )
     last_login = forms.DateTimeField(
         required=False,
         widget=forms.TextInput(attrs={
             'class': 'form-control',
             'readonly': 'readonly'})
-                                )
+    )
     first_name = forms.CharField(
         required=True, widget=forms.TextInput(
-                                attrs={'class': 'form-control'})
-                                )
+            attrs={'class': 'form-control'})
+    )
     last_name = forms.CharField(
         required=True, widget=forms.TextInput(
-                                attrs={'class': 'form-control'})
-                                )
+            attrs={'class': 'form-control'})
+    )
     email = forms.CharField(
         required=True, widget=forms.TextInput(
-                                attrs={'class': 'form-control'})
-                                )
+            attrs={'class': 'form-control'})
+    )
     date_joined = forms.DateTimeField(
         required=True, widget=forms.TextInput(
-                                attrs={'class': 'form-control',
-                                       'readonly': 'readonly'})
-                                )
+            attrs={'class': 'form-control',
+                   'readonly': 'readonly'})
+    )
 
     class Meta:
         model = User
