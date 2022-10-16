@@ -32,9 +32,7 @@ jobs:
         python -V
         pip -V
 
-    - name: Lint
-      continue-on-error: true
-      run: make lint
+
 
     - name: Pylint
       continue-on-error: true
