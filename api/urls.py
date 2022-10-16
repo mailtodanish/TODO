@@ -1,7 +1,7 @@
 
 from .views import ScheduledActivityList
 from .views import RevisionItem, RevisionItemUpdate, CommentsofTheDay
-from .views import RevisionItemofTheDay, ChildActivityList, FavouriteItem,MakeTask
+from .views import RevisionItemofTheDay, ChildActivityList, FavouriteItem, MakeTask
 from rest_framework.authtoken.views import obtain_auth_token
 from rest_framework.routers import DefaultRouter
 from .apiview import ActivityViewSet
@@ -24,7 +24,7 @@ urlpatterns = [
     # daily_task Test Case -done
     path("api/dailytask/", RevisionItemofTheDay.as_view(),
          name="daily_task"),
-     #child activities
+    # child activities
     path("api/childactivity/<int:pk>/", ChildActivityList.as_view(),
          name="api-child-activity"),
     path("api/fav-items/", FavouriteItem.as_view(),

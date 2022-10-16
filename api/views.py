@@ -98,7 +98,7 @@ class RevisionItemofTheDay(APIView):
     '''
     permission_classes = [permissions.IsAuthenticated]
 
-    def _send_email(self,from_email, to_email, subject, message, attachment_list):
+    def _send_email(self, from_email, to_email, subject, message, attachment_list):
         '''send email using SendGrid
         :param str from_email: Sender email address
         :param str to_email: Email to send message
@@ -141,7 +141,6 @@ class RevisionItemofTheDay(APIView):
     def get(self, request):
         try:
 
-
             dt = timezone.now()
             queryset = Activity.objects.filter(
                 scheduled__lte=dt,
@@ -149,7 +148,8 @@ class RevisionItemofTheDay(APIView):
             html_message = loader.render_to_string('api/mail_template.html',
                                                    {'Activities': queryset})
             sender_email = settings.SENDGRID_SENDER_EMAIL
-            self._send_email(sender_email, 'mailtodanish@gmail.com', 'Task of the day', html_message, [])
+            self._send_email(sender_email, 'mailtodanish@gmail.com',
+                             'Task of the day', html_message, [])
             return Response("Success")
         except Exception as e:
             return Response({"detail": str(e)},
@@ -164,7 +164,7 @@ class CommentsofTheDay(APIView):
     '''
     permission_classes = [permissions.IsAuthenticated]
 
-    def _send_email(self,from_email, to_email, subject, message, attachment_list):
+    def _send_email(self, from_email, to_email, subject, message, attachment_list):
         '''send email using SendGrid
         :param str from_email: Sender email address
         :param str to_email: Email to send message
@@ -206,7 +206,8 @@ class CommentsofTheDay(APIView):
 
     def get(self, request, format=None):
         try:
-            queryset = TaskComment.objects.exclude(task__is_active=False).all().order_by('updated')[:20]
+            queryset = TaskComment.objects.exclude(
+                task__is_active=False).all().order_by('updated')[:20]
             queryset1 = TaskComment.objects.all().order_by('-created')[:3]
             object_list = []
             for record in queryset:
@@ -218,9 +219,10 @@ class CommentsofTheDay(APIView):
                 'items': object_list,
                 'domain': domain
             })
-          
+
             sender_email = settings.SENDGRID_SENDER_EMAIL
-            self._send_email(sender_email, 'mailtodanish@gmail.com', 'Revision Item of the day', html_message, [])
+            self._send_email(sender_email, 'mailtodanish@gmail.com',
+                             'Revision Item of the day', html_message, [])
             return Response("Success")
         except Exception as e:
             return Response({"detail": str(e)},
