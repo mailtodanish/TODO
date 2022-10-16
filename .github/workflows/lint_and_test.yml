@@ -35,6 +35,6 @@ jobs:
 
     - name: Pylint
       continue-on-error: true
-      run: pylint --ignore=static --ignore=templates */
+      run: pylint --ignore=static --ignore=templates --ignore=migrations */
 
     
