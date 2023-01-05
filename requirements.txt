@@ -17,6 +17,7 @@ cryptography==39.0.0
 cssselect2==0.7.0
 debugpy==1.6.4
 decorator==5.1.1
+dj-taggit-serializer==0.1.7
 Django==4.1.5
 django-admin-generator==2.2.1
 django-appconf==1.0.5
@@ -24,7 +25,6 @@ django-crispy-forms==1.14.0
 django-cryptography==1.1
 django-extensions==3.2.1
 django-taggit==3.1.0
-django-taggit-serializer==0.1.7
 django-tinymce==3.5.0
 django-utils2==2.12.1
 djangorestframework==3.14.0
