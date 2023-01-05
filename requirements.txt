@@ -91,5 +91,6 @@ uritools==4.0.0
 urllib3==1.26.13
 wcwidth==0.2.5
 webencodings==0.5.1
+whitenoise==6.3.0
 xhtml2pdf==0.2.8
 yarl==1.8.2
