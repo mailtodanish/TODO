@@ -1,7 +1,8 @@
 > **Note**: Upgrading project to DJANGO 4 manually.
+
 # TODO
 
-Based on Django , **secure** and **shareable**.  Create daily activities , schedule activities and add notes to do revision in future.
+Based on Django , **secure** and **shareable**. Create daily activities , schedule activities and add notes to do revision in future.
 
 **I have created this project long before for my personal use and I am using it till now.**
 
@@ -10,6 +11,16 @@ Based on Django , **secure** and **shareable**.  Create daily activities , sched
 2.  Add activities , Schedule activities
 
 ## Running Project locally
+
+### create venv
+
+```bash
+$python -m venv todo
+$source todo/bin/activate
+$ cat .dev.env > .env
+$ export $(cat .env) # load .env
+
+```
 
 ### Create pipenv and install all dependencies.
 
@@ -23,21 +34,21 @@ $ pipenv shell
 
 ### Clone repository to your local machine
 
-*   [ ] `git clonehttps://github.com/mailtodanish/TODO.git`
+- [ ] `git clonehttps://github.com/mailtodanish/TODO.git`
 
 <!---->
 
-*   [ ] `Install requirements.txt`
+- [ ] `Install requirements.txt`
 
 <!---->
 
-*   [ ] `Apply migrations`
+- [ ] `Apply migrations`
 
 ### Don't forget to load applictaion data
 
     python manage.py migrate
     python manage.py createsuperuser
-    python manage.py loaddata ApplictaionData.json 
+    python manage.py loaddata ApplictaionData.json
 
 **Update your secrets Key in seting.py**
 
@@ -49,6 +60,7 @@ $ pipenv shell
 ![Image](img/screen_shot2.png)
 
 ### Freez
+
 pipenv lock -r > requirements.txt
 
 python manage.py shell_plus --notebook
