@@ -15,21 +15,16 @@ Based on Django , **secure** and **shareable**. Create daily activities , schedu
 ### create venv
 
 ```bash
-$python -m venv todo
-$source todo/bin/activate
+$ python -m venv todo
+$ source todo/bin/activate
 $ cat .dev.env > .env
 $ export $(cat .env) # load .env
+$ python manage.py collectstatic --clear --noinput
+$ python manage.py migrate
+$ python manage.py createsuperuser
+$ python manage.py loaddata ApplictaionData.json
 
-```
 
-### Create pipenv and install all dependencies.
-
-```bash
-pip install pipenv
-
-$ pipenv install
-
-$ pipenv shell
 ```
 
 ### Clone repository to your local machine

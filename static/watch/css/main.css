@@ -1,0 +1,50 @@
+#time{
+    font-size: 1vw;
+    position: absolute;            
+    color:#717077;
+    top:20%;
+    left:40%;
+}
+#watch{
+    position: fixed;
+    margin: auto;
+    background: url(../img/watch.png) no-repeat;
+    height: 10vw;
+    width: 10vw;
+    background-size: 100%;
+   
+    bottom: 10%;
+    /* margin: auto; */
+    margin-left: 2%;
+    
+}
+#second{
+    position: absolute;
+    height: 30%;
+    width: 1%;
+    top: 20%;
+    left: 49%;
+    background-color: black;
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+#minute{
+    position: absolute;
+    height: 25%;
+    width: 2%;
+    top: 25%;
+    left: 49%;
+    background-color: black;
+    transform-origin: bottom;
+    border-radius: 10px;
+}
+#hour{
+    position: absolute;
+    height: 20%;
+    width: 3%;
+    top: 30%;
+    left: 48%;
+    background-color: black;
+    transform-origin: bottom;
+    border-radius: 10px;
+}

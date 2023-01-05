@@ -143,7 +143,7 @@ class ActivityCreateForm(forms.ModelForm):
     required_css_class = 'required'
     Description = forms.CharField(
         label='detail',
-        required=True,
+        required=False,
         label_suffix="",
         # widget=TinyMCE(attrs={'class': 'form-control'})
         widget=forms.Textarea()
